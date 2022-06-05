@@ -128,3 +128,16 @@ sr.reveal(".value__images, .contact__content", {origin: "left"});
 sr.reveal(".value__content, .contact__images", {origin: "right"});
 
 
+fetch('https://api.sampleapis.com/coffee/hot')
+  .then(response => response.json())
+  .then(data = (data) => {
+    let title = document.querySelectorAll(".popular__title")
+    let img = document.querySelectorAll(".popular__img");
+
+    img.forEach((item,index)=>{
+      item.src = data[index].image; 
+      console.log(item.src) 
+    })
+
+
+  });
